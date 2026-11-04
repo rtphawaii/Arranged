@@ -1,0 +1,46 @@
+{
+  "name": "arranged-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "API, matching engine and jobs for the Arranged dinner-matching app",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "migrate": "tsx src/db/migrate.ts",
+    "seed": "tsx src/db/seed.ts",
+    "jobs": "tsx src/jobs/cli.ts",
+    "openapi": "tsx src/openapi.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.0",
+    "@fastify/rate-limit": "^10.2.0",
+    "@fastify/swagger": "^9.5.0",
+    "@fastify/swagger-ui": "^5.2.0",
+    "fastify": "^5.3.0",
+    "fastify-plugin": "^5.1.0",
+    "fastify-type-provider-zod": "^5.0.0",
+    "jose": "^6.0.0",
+    "kysely": "^0.28.0",
+    "pg": "^8.14.0",
+    "pino-pretty": "^13.0.0",
+    "stripe": "^18.0.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.0",
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.11.0",
+    "kysely-pglite": "^0.6.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.1.0"
+  }
+}
